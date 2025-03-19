@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buy Books Online</title>
+    <link rel="shortcut icon" href="Media/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style type="text/css">
+    /* General Styles */
+    marquee div{
+            display: inline-block;
+            margin-left: 100px;
+        }
+        marquee span{
+            font-size: large;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(247, 233, 163);
+            text-shadow: 2px 2px 2px black;
+        }
+        body{
+            background-color:blanchedalmond;
+        }
+        .cat{
+            display: inline-block;
+        }
+        .cat:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        nav{
+            background-color:rgb(236, 183, 119);
+        }
+        .book{
+            font-size: large;
+            font-weight: bold;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(66, 44, 16);
+            text-shadow: 0px 0px 1px rgb(37, 20, 5);
+        
+        }
+        header{
+            position: sticky;
+            top: 0;
+            overflow: visible;
+            z-index: 2;
+        }
+        .card{
+            display: inline-block;
+        }
+        .card:hover{
+          transform: scale(1.1);
+          transition: 0.5s;
+        }
+        .trendy:hover{
+            transform: rotateY(360deg);
+            transform: scale3d(1.1);
+            transition: 2s;
+        }
+        .logo:hover{
+            transform: rotateY(720deg);
+            transform: scale3d(1.1);
+            transition: 2s;
+        }
+        .head{
+          background-color: rgb(30, 29, 29);
+            color: white;
+            display: flex;
+            font-size: 1rem;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 20px;
+            padding: 15px;
+
+        }
+        .vm{
+            right: -30px;
+        top: 100px ;
+        position: fixed;
+        transition: 2s;
+        
+        }
+        .vm:hover{
+            right: 3px;
+            top: 100px ;
+            transform: scale(1.2);
+            transition: 1s;
+            z-index: 3;
+        }
+body {
+    background-color: blanchedalmond;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Responsiveness */
+nav {
+    background-color: rgb(236, 183, 119);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    #hata{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+/* Responsive Categories */
+.Categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Categories .cat img {
+    width: 90%;
+    max-width: 250px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Categories .cat img:hover {
+    transform: scale(1.1);
+}
+
+/* Best Sellers & Trending */
+.BestSeller {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 12rem;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.trendy {
+    transition: transform 2s ease-in-out;
+}
+
+.trendy:hover {
+    animation: rotateAnimation 2s linear infinite;
+}
+
+@keyframes rotateAnimation {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Footer Styling */
+.head {
+    background-color: rgb(30, 29, 29);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 992px) {
+    .BestSeller {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%;
+    }
+    #hata{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .Categories .cat img {
+        width: 100%;
+    }
+    
+    .BestSeller .card {
+        width: 100%;
+    }
+    #hata{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+/* Social Media Button Animations */
+.vm {
+    position: fixed;
+    right: -30px;
+    top: 100px;
+    transition: all 1s;
+}
+
+.vm:hover {
+    right: 3px;
+    transform: scale(1.2);
+}
+   
+    </style>
+
+</head>
+<body class="container-fluid">
+
+    <marquee class="p-1 bg-danger w-100" id="top">
+        <div>
+            <span class="me-1">BUY 3</span><span class="text-white">GET EXTRA 10% OFF!</span>
+        </div>
+        <div>
+            <span class="me-1">BUY 5</span><span class="text-white">GET EXTRA 15% OFF!</span>
+        </div>
+        <div>
+            <span class="me-1">BUY 3</span><span class="text-white">GET EXTRA 25% OFF!</span>
+        </div>
+        <div>
+            <span class="me-1 ">BUY 3</span><span class="text-white">GET EXTRA 10% OFF!</span>
+        </div>
+        <div>
+            <span class="me-1">BUY 5</span><span class="text-white">GET EXTRA 15% OFF!</span>
+        </div>
+        <div>
+            <span class="me-1">BUY 3</span><span class="text-white">GET EXTRA 25% OFF!</span>
+        </div>
+
+    </marquee>
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><span class="book">BOOKbook.com</span></a>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Category</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Gifting</a></li>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Bulk</a></li>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Account
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><span class="bi bi-person-fill">&nbsp;</span>My Profile</a></li>
+                      <li><a class="dropdown-item" href="#"><span class="bi bi-bag-fill">&nbsp;</span>My Orders</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Need Help!</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" list="autosuggestions" type="search" placeholder="Search" aria-label="Search">
+                  <datalist id="autosuggestions">
+            
+                    <option>Atomic Habits</option>
+                    <option>Wings Of Fire</option>
+                    <option>Fairy Tales</option>
+                    <option>Rich Dad Poor Dad</option>
+                    <option>Ikigai</option>
+                    <option>How to win friends & influence people</option>
+                    <option>Harry Potter</option>
+                    <option>Ruskin Bond</option>
+                    <option>Dopamine Detox</option>
+                    <option>Mahabharata</option>
+                    <option>Panchatantra</option>
+                    <option>2States</option>
+            
+                </datalist>
+                  <button class="btn btn-outline-danger" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
+      <section class="d-flex justify-content-center"><img class="logo" src="Media/logo.png" width="10%" alt=""></section>
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="4"></button>
+          </div>
+
+        <div class="carousel-inner mt-3">
+
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="Media/carousel_slide1.jpg" class="d-block w-100" alt="...">
+              </div>
+
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Media/carousel_slide2.jpg" class="d-block w-100" alt="...">
+              </div>
+
+            <div class="carousel-item active" data-bs-interval="2000">
+                <a href="">
+                <img src="Media/carousel_slide3.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            <div class="carousel-item active" data-bs-interval="2000">
+                <a href="">
+                <img src="Media/carousel slide 4.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            <div class="carousel-item active" data-bs-interval="1000">
+                <a href="">
+                <img src="Media/carousel_slide5.jpg" class="d-block w-100" alt="..."></a>
+            </div>
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    <main class="mt-lg-4 ">
+
+
+        <section class="Categories d-flex justify-content-between mb-2" id="hata">
+            <a href="power.html"><div class="cat"><img src="Media/book1.jpg" width="250px" class="rounded-3"></div></a>
+            <a href="power.html"><div class="cat"><img src="Media/book2.jpg" width="250px" class="rounded-3"></div></a>
+            <a href="power.html"><div class="cat"><img src="Media/book3.jpg" width="250px" class="rounded-3"></div></a>
+            <a href="power.html"><div class="cat"><img src="Media/book4.jpg" width="250px" class="rounded-3"></div></a>
+        </section>
+        <br>
+        <h3><span class="bi bi-cup-hot-fill me-2"></span>Now Trending </h3>
+        <section class="BestSeller mt-2 d-flex justify-content-between">
+            <a href="power.html"><img class="trendy" src="Media/t1.png" width="300px;" alt="..."></a>
+            <a href="power.html"><img class="trendy" src="Media/t2.png" width="300px;" alt="..."></a>
+            <a href="power.html"><img class="trendy" src="Media/t4.png" width="300px;" alt="..."></a>
+        </section>
+
+        <h3><span class="bi bi-award-fill me-2"></span>Best Sellers </h3>
+        <section class="BestSeller mt-2 d-flex justify-content-between">
+
+          <a href="power.html"><div class="card p-1" style="width: 12rem;">
+                <img src="Media/Detox.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div></a>
+            <a href="power.html"><div class="card p-1" style="width: 12rem;">
+                <img src="Media/The Subtle Art.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div></a>
+            <a href="power.html"><div class="card p-1" style="width: 12rem;">
+                <img src="Media/Atomic Habits.png" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div></a>
+            </div>
+            <a href="power.html"><div class="card p-1" style="width: 12rem;">
+                <img src="Media/monk.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+                
+            </div>
+            </a>
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+                <img src="Media/rework.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div>
+            </a>
+        </section>
+        <br>
+        <h3> <span class="bi bi-trophy-fill me-2"></span>Award Winners</h3>
+        <section class="BestSeller mt-2 d-flex justify-content-between">
+
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+                <img src="Media/The Alchemist.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div>
+            </a>
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+              <img src="Media/how to win.jpg" width="" class="card-img-top" alt="...">
+              <div class="card-body">
+                <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+              </div>
+          </div></a>
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+                <img src="Media/Eat That frog.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div>
+            </a>
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+                <img src="Media/Dislliked.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div>
+            </a>
+            <a href="power.html">
+              <div class="card p-1" style="width: 12rem;">
+                <img src="Media/Ikigai.jpg" width="" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <a href="power.html" class="btn btn-outline-warning w-100">Details</a>
+                </div>
+            </div>
+            </a>
+        </section>
+    </main>
+    <dl class="vm">
+      <dd class="aside btn-group-vertical">
+          <button class="btn btn-primary"><span class="bi bi-facebook"></span></button>
+          <button class="btn btn-danger"><span class="bi bi-instagram"></span></button>
+          <button class="btn btn-info"><span class="bi bi-twitter"></span></button>
+          <button class="btn btn-success"><span class="bi bi-whatsapp"></span></button>
+          <button class="btn btn-warning"><span class="bi bi-google-play"></span></button>
+          <button class="btn btn-danger"><span class="bi bi-youtube"></span></button>
+          <button class="btn btn-success"><span class="bi bi-twitter-x"></span></button>
+          <button class="btn btn-warning"><span class="bi bi-threads"></span></button>
+          <button class="btn btn-danger"><span class="bi bi-person-raised-hand"></span></button>
+      </dd>
+      
+  </dl>
+    <div class="head">
+      <footer>
+          <h3>&copy; 2025 Book Showcase | All Rights Reserved</h3>
+          <a href="#top"><button class="btn btn-warning float-lg-end w-100">Go To Top</button></a>
+      </footer>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
